@@ -29,9 +29,26 @@ Combined Cycle Power Plants need accurate hourly output predictions (420-495 MW)
 2. Install dependencies: `pip install -r requirements.txt`
 3. Run: `python code/ccpp_model.py --data data/CCPP_data.csv`
 
+## API Usage
+Run the API to predict energy output in real-time:
+1. Start the server: `python code/api.py`
+2. Send a POST request to `http://localhost:5000/predict`:
+   ```json
+   {
+     "T": 25.0,
+     "AP": 1013.0,
+     "RH": 60.0,
+     "V": 40.0
+   }
+   {
+  "prediction": 455.383,
+  "unit": "MW"
+    }
+
 ## Product Roadmap
 - **MVP**: Current model with static data.
-- **Next**: Real-time API integration, UI dashboard, multi-plant scaling.
+- **Done**: Real-time API integration (see API Usage).
+- **Next**: UI dashboard, multi-plant scaling, model persistence (save/load).
 
 ## Presentation
 See [presentation.pdf](assets/presentation.pdf) for C-suite pitch.
