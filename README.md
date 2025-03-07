@@ -34,7 +34,7 @@ Combined Cycle Power Plants need accurate hourly output predictions (420-495 MW)
 - **Next**: Real-time API integration, UI dashboard, multi-plant scaling.
 
 ## Presentation
-See [presentation.pdf](assets/presentation.pdf) for C-suite pitch.
+See [presentation.pdf](assets/presentation.pdf) for pitch deck.
 
 ## Why This Matters
 As an AI Product Manager, I designed this to bridge technical execution (ML modeling) with business impact (efficiency gains), ready for production deployment.
