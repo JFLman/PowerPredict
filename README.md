@@ -46,8 +46,8 @@ Run the API to predict energy output in real-time:
 
 ## Product Roadmap
 - **MVP**: Current model with static data.
-- **Done**: Real-time API integration (see API Usage).
-- **Next**: UI dashboard, multi-plant scaling, model persistence (save/load).
+- **Done**: Real-time API integration, model persistence (see API Usage).
+- **Next**: UI dashboard, multi-plant scaling.
 
 ## Presentation
 See [presentation.pdf](assets/presentation.pdf) for pitch deck.
