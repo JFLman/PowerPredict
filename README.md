@@ -51,7 +51,7 @@ Run the API to predict energy output in real-time:
 - **Next**: UI dashboard, multi-plant scaling, model persistence (save/load).
 
 ## Presentation
-See [presentation.pdf](assets/presentation.pdf) for C-suite pitch.
+See [presentation.pdf](assets/presentation.pdf) for pitch deck.
 
 ## Why This Matters
 As an AI Product Manager, I designed this to bridge technical execution (ML modeling) with business impact (efficiency gains), ready for production deployment.
