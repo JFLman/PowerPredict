@@ -31,8 +31,11 @@ Combined Cycle Power Plants need accurate hourly output predictions (420-495 MW)
 
 ## API Usage
 Run the API to predict energy output in real-time:
-1. Start the server: `python code/api.py`
-2. Send a POST request to `http://localhost:5000/predict`:
+
+1. Train and save model (once): `python code/ccpp_model.py`
+2. Start the server: `python code/api.py`
+3. Send a POST request to `http://localhost:5000/predict`:
+
    ```json
    {
      "T": 25.0,
@@ -40,10 +43,6 @@ Run the API to predict energy output in real-time:
      "RH": 60.0,
      "V": 40.0
    }
-   {
-  "prediction": 455.383,
-  "unit": "MW"
-    }
 
 ## Product Roadmap
 - **MVP**: Current model with static data.

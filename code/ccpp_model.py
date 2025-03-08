@@ -6,6 +6,7 @@ from sklearn.ensemble import RandomForestRegressor
 from sklearn.metrics import mean_squared_error
 import matplotlib.pyplot as plt
 import argparse
+import pickle
 
 def load_data(file_path):
     """Load and validate CCPP dataset."""
@@ -46,6 +47,11 @@ def train_and_evaluate(X, y):
     # Select best model
     best_model = rf if rf_rmse < lr_rmse else lr
     print(f"Best model: {'Random Forest' if rf_rmse < lr_rmse else 'Linear Regression'}")
+
+    # Save the model
+    with open('model.pkl', 'wb') as f:
+        pickle.dump(best_model, f)
+    print("Model saved to model.pkl")
 
     # Test evaluation
     test_pred = best_model.predict(X_test)

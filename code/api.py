@@ -7,16 +7,17 @@ import pickle
 app = Flask(__name__)
 
 # Load or train model (for simplicity, train here; in production, load from file)
-def load_or_train_model():
-    data = pd.read_csv('data/CCPP_data.csv')
-    X = data[['T', 'AP', 'RH', 'V']]
-    y = data['PE']
-    model = RandomForestRegressor(n_estimators=100, max_depth=10, random_state=42)
-    model.fit(X, y)
-    # Optionally save for reuse: pickle.dump(model, open('model.pkl', 'wb'))
-    return model
+def load_model():
+    try:
+        with open('model.pkl', 'rb') as f:
+            model = pickle.load(f)
+        print("Model loaded from model.pkl")
+        return model
+    except FileNotFoundError:
+        print("Error: model.pkl not found. Run ccpp_model.py first to train and save the model.")
+        exit(1)
 
-model = load_or_train_model()
+model = load_model()
 
 @app.route('/predict', methods=['POST'])
 def predict():
