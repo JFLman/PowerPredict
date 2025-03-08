@@ -7,7 +7,7 @@ Combined Cycle Power Plants need accurate hourly output predictions (420-495 MW)
 
 ## Solution
 - **Type**: Supervised regression model.
-- **Features**: Temperature (T), Ambient Pressure (AP), Relative Humidity (RH), Exhaust Vacuum (V).
+- **Features**: Temperature (T in Celsius), Ambient Pressure (AP), Relative Humidity (RH), Exhaust Vacuum (V).
 - **Tech Stack**: Python, VS Code, `pandas`, `scikit-learn`, `numpy`, `matplotlib`.
 - **Approach**:
   - Data: 9,568 hourly sensor readings.
@@ -34,7 +34,7 @@ Run the API to predict energy output in real-time:
 
 1. Train and save model (once): `python code/ccpp_model.py`
 2. Start the server: `python code/api.py`
-3. Send a POST request to `http://localhost:5000/predict`:
+3. Send a POST request to `http://localhost:5000/predict`(T in Celsius):
 
    ```json
    {
@@ -43,6 +43,17 @@ Run the API to predict energy output in real-time:
      "RH": 60.0,
      "V": 40.0
    }
+  {
+  "prediction": 4453.8829,
+  "unit": "MW",
+  "note": "Inputs: T in Celsius, AP in hPa, RH in %, V in m/s"
+  }
+
+## Dashboard
+Interact with PowerPredict via a web UI:
+1. Train and save model (once): `python code/ccpp_model.py`
+2. Launch the dashboard: `streamlit run code/dashboard.py`
+3. Open `http://localhost:8501` in your browser to input parameters (T in Celsius) and see predictions.
 
 ## Product Roadmap
 - **MVP**: Current model with static data.

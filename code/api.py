@@ -27,7 +27,7 @@ def predict():
         input_data = pd.DataFrame([[data['T'], data['AP'], data['RH'], data['V']]], 
                                 columns=['T', 'AP', 'RH', 'V'])
         prediction = model.predict(input_data)[0]
-        return jsonify({'prediction': float(prediction), 'unit': 'MW'})
+        return jsonify({'prediction': float(prediction), 'unit': 'MW', 'note': 'Inputs: T in Celsius, AP in hPa, RH in %, V in m/s'})
     except KeyError as e:
         return jsonify({'error': f'Missing field: {e}'}), 400
     except Exception as e:
