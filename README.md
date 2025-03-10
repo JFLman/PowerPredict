@@ -54,6 +54,7 @@ Interact with PowerPredict via a web UI:
 1. Train and save model (once): `python code/ccpp_model.py`
 2. Launch the dashboard: `streamlit run code/dashboard.py`
 3. Open `http://localhost:8501` in your browser to input parameters (T in Celsius) and see predictions.
+![PowerPredict UI](assets/Power-predict-UI.png)
 
 ## Product Roadmap
 - **MVP**: Current model with static data.
